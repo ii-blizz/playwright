@@ -1,4 +1,4 @@
-export interface Metadata {
+interface Metadata {
     [key: string]: any;
 }
 
