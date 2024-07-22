@@ -1,5 +1,5 @@
 import { baseURL, test } from "./fixtures/uiFixture";
-import { expectedMetadata } from "../../fixtures/part-1/data/companyMetaData";
+import { expectedMetadata } from "../../fixtures/part-1/data/companyMetadata";
 
 test("Assert Company Metadata", async ({ page, homePage, companyPage }) => {
     // 1. [5%]
