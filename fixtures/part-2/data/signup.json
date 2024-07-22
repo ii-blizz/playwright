@@ -1,0 +1,59 @@
+{
+    "signupScenarios": [
+        {
+            "tc_id": "TC_01",
+            "tc_description": "Invalid email format",
+            "data": {
+                "email": "iivanovski",
+                "password": "password24%",
+                "firstName": "Ilija",
+                "lastName": "Ivanovski",
+                "username": "iivanovski1",
+                "dateOfBirth": "28/06/1991"
+            },
+            "expectedResponse": {
+                "code": 400,
+                "body": {
+                    "email": ["Enter a valid email address."],
+                    "username": ["This username is already in use."]
+                }
+            }
+        },
+        {
+            "tc_id": "TC_02",
+            "tc_description": "Missing required property username",
+            "data": {
+                "email": "iivanovski2@example.com",
+                "password": "password24%",
+                "firstName": "Ilija",
+                "lastName": "Ivanovski",
+                "dateOfBirth": "28/06/1991"
+            },
+            "expectedResponse": {
+                "code": 400,
+                "body": {
+                    "username": ["This field is required."]
+                }
+            }
+        },
+        {
+            "tc_id": "TC_03",
+            "tc_description": "Username in use and invalid password format",
+            "data": {
+                "email": "iivanovski2@example.com",
+                "username": "iivanovski1",
+                "password": "pass",
+                "firstName": "Ilija",
+                "lastName": "Ivanovski",
+                "dateOfBirth": "28/06/1991"
+            },
+            "expectedResponse": {
+                "code": 400,
+                "body": {
+                    "password": ["Password must contain at least eight characters, one letter and one number."],
+                    "username": ["This username is already in use."]
+                }
+            }
+        }
+    ]
+}

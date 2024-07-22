@@ -1,0 +1,30 @@
+{
+    "addPostCommentScenarios": [
+        {
+            "tc_id": "TC_01",
+            "tc_description": "Create post comment happy path",
+            "expectedResponse": {
+                "code": 201
+            }
+        },
+        {
+            "tc_id": "TC_02",
+            "tc_description": "No post id provided",
+            "postId": 0,
+            "expectedResponse": {
+                "code": 400,
+                "body": { "errors": { "post": ["Invalid pk \"0\" - object does not exist."] } }
+            }
+        },
+        {
+            "tc_id": "TC_03",
+            "tc_description": "No authentication provided",
+            "expectedResponse": {
+                "code": 401,
+                "body": {
+                    "detail": "Invalid token header. No credentials provided."
+                }
+            }
+        }
+    ]
+}

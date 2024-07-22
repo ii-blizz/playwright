@@ -1,0 +1,44 @@
+{
+    "loginScenarios": [
+        {
+            "tc_id": "TC_01",
+            "tc_description": "Valid existing user credentials",
+            "data": {
+                "username": "iivanovski1",
+                "password": "password24%"
+            },
+            "expectedResponse": {
+                "code": 200
+            }
+        },
+        {
+            "tc_id": "TC_02",
+            "tc_description": "Wrong username and password",
+            "data": {
+                "username": "unexisting_iivanovski1",
+                "password": "unexisting_password24"
+            },
+            "expectedResponse": {
+                "code": 404,
+                "body": {
+                    "successs": false
+                }
+            }
+        },
+        {
+            "tc_id": "TC_03",
+            "tc_description": "Empty username and password",
+            "data": {
+                "username": "",
+                "password": ""
+            },
+            "expectedResponse": {
+                "code": 400,
+                "body": {
+                    "username": ["This field may not be blank."],
+                    "password": ["This field may not be blank."]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "name": "playwright-part-1-and-2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "tests": "npx playwright test",
+        "part-1": "npx playwright test tests/part-1/",
+        "part-2": "npx playwright test tests/part-2/"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@playwright/test": "^1.45.2"
+    },
+    "dependencies": {
+        "@types/node": "^20.14.11",
+        "dotenv": "^16.4.5"
+    }
+}

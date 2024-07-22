@@ -1,0 +1,32 @@
+{
+    "addPostScenarios": [
+        {
+            "tc_id": "TC_01",
+            "tc_description": "Create a post happy path",
+            "expectedResponse": {
+                "code": 201
+            }
+        },
+        {
+            "tc_id": "TC_02",
+            "tc_description": "No authentication provided",
+            "expectedResponse": {
+                "code": 401,
+                "body": {
+                    "detail": "Invalid token header. No credentials provided."
+                }
+            }
+        },
+        {
+            "tc_id": "TC_03",
+            "tc_description": "Invalid authentication provided",
+            "token": "invalid_token",
+            "expectedResponse": {
+                "code": 401,
+                "body": {
+                    "detail": "Invalid token."
+                }
+            }
+        }
+    ]
+}

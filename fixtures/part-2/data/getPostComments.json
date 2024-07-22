@@ -1,0 +1,40 @@
+{
+    "getPostCommentScenarios": [
+        {
+            "tc_id": "TC_01",
+            "tc_description": "Get post without comments",
+            "numberOfComments": 0,
+            "expectedResponse": {
+                "code": 200
+            }
+        },
+        {
+            "tc_id": "TC_02",
+            "tc_description": "Get post with 1 comment",
+            "numberOfComments": 1,
+            "postId": 0,
+            "expectedResponse": {
+                "code": 200
+            }
+        },
+        {
+            "tc_id": "TC_03",
+            "tc_description": "Get post with more than 1 comments",
+            "numberOfComments": 2,
+            "postId": 0,
+            "expectedResponse": {
+                "code": 200
+            }
+        },
+        {
+            "tc_id": "TC_04",
+            "tc_description": "No authentication provided",
+            "expectedResponse": {
+                "code": 401,
+                "body": {
+                    "detail": "Invalid token header. No credentials provided."
+                }
+            }
+        }
+    ]
+}
